@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DO ZERO AO SITE COM IA — aprenda a criar sites profissionais usando Inteligência Artificial, mesmo começando do zero.">
+<title>DO ZERO AO SITE COM IA | TechFlow</title>
+<style>
+:root{
+  --bg:#05070d;--card:#0d111b;--card2:#101725;--text:#f7f9ff;--muted:#aab3c5;
+  --blue:#12c8ff;--purple:#8b5cf6;--line:rgba(255,255,255,.10);
+  --grad:linear-gradient(135deg,#10cfff 0%,#3b82f6 48%,#9b4dff 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at 80% 0%,rgba(83,55,180,.22),transparent 32%),var(--bg);color:var(--text);line-height:1.55}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+.nav{padding:22px 0;border-bottom:1px solid var(--line);position:relative;z-index:2}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:22px;letter-spacing:.5px}.logo span{color:var(--blue)}
+.nav-btn{padding:11px 18px;border:1px solid rgba(18,200,255,.45);border-radius:999px;font-weight:800;font-size:14px}
+.hero{padding:65px 0 55px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+.badge{display:inline-flex;padding:8px 13px;border:1px solid rgba(18,200,255,.3);background:rgba(18,200,255,.07);border-radius:999px;color:#8ee9ff;font-weight:800;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(42px,6vw,72px);line-height:.98;letter-spacing:-3px;margin-bottom:22px}
+.gradient{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:19px;color:var(--muted);max-width:650px;margin-bottom:28px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--grad);color:#fff;padding:17px 28px;border-radius:13px;font-weight:900;font-size:17px;box-shadow:0 12px 35px rgba(31,145,255,.25);transition:.2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(31,145,255,.35)}
+.price{display:flex;align-items:baseline;gap:10px;margin:18px 0}.price small{color:#7f8aa0;text-decoration:line-through}.price strong{font-size:40px}
+.note{font-size:13px!important;margin:0!important;color:#7f8aa0!important}
+.cover{width:100%;max-width:510px;margin:auto;display:block;border-radius:22px;box-shadow:0 35px 90px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.12)}
+.section{padding:75px 0}.section-title{text-align:center;font-size:clamp(30px,4vw,46px);line-height:1.05;margin-bottom:15px;letter-spacing:-1.5px}.section-sub{text-align:center;color:var(--muted);max-width:720px;margin:0 auto 42px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:18px;padding:25px}
+.icon{font-size:28px;margin-bottom:14px}.card h3{font-size:19px;margin-bottom:7px}.card p{color:var(--muted);font-size:15px}
+.included{background:linear-gradient(180deg,rgba(18,200,255,.035),rgba(139,92,246,.035));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:850px;margin:auto}
+.check{padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-weight:700}
+.check span{color:#27d7ff;margin-right:8px}
+.audience{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}.audience-box{padding:30px;border:1px solid var(--line);background:var(--card);border-radius:18px}.audience-box h3{margin-bottom:15px}.audience-box li{list-style:none;padding:8px 0;color:var(--muted)}.audience-box li:before{content:"✓";color:var(--blue);font-weight:900;margin-right:9px}
+.offer{padding:75px 0}.offer-box{max-width:760px;margin:auto;text-align:center;padding:45px 28px;border-radius:24px;border:1px solid rgba(75,174,255,.25);background:radial-gradient(circle at 50% 0%,rgba(47,153,255,.14),transparent 45%),var(--card)}
+.offer-box .price{justify-content:center}.offer-box .price strong{font-size:52px}.payment{color:#9ba7bb;margin-bottom:22px}
+.faq{max-width:820px;margin:auto}.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:18px 20px}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);padding-top:12px}
+.final{text-align:center;padding:80px 0 95px;background:radial-gradient(circle at 50% 0%,rgba(71,101,255,.15),transparent 45%)}
+footer{padding:25px 0;border-top:1px solid var(--line);text-align:center;color:#788399;font-size:13px}
+@media(max-width:850px){
+ .hero-grid,.audience{grid-template-columns:1fr}.hero{padding-top:42px}.hero-grid{gap:35px}
+ .grid{grid-template-columns:1fr 1fr}.checks{grid-template-columns:1fr}
+ h1{letter-spacing:-2px}
+}
+@media(max-width:560px){
+ .grid{grid-template-columns:1fr}.nav-btn{display:none}.hero p{font-size:17px}.section{padding:58px 0}
+ .cta{width:100%}.cover{max-width:380px}.price strong{font-size:34px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="logo">TECH<span>FLOW</span></div>
+    <a class="nav-btn" href="#oferta">QUERO COMEÇAR</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">CURSO 100% ONLINE • ACESSO DIGITAL</div>
+      <h1>DO ZERO AO<br><span class="gradient">SITE COM IA</span></h1>
+      <p>Aprenda a criar sites profissionais usando Inteligência Artificial — mesmo começando do zero.</p>
+      <a class="cta" href="#oferta">QUERO COMEÇAR AGORA →</a>
+      <div class="price"><small>R$ 97,00</small><strong>R$ 49,90</strong></div>
+      <p class="note">Pagamento único. Acesso conforme as condições apresentadas no checkout.</p>
+    </div>
+    <div><img class="cover" src="capa-produto.png" alt="Capa do curso DO ZERO AO SITE COM IA"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Você não precisa começar sabendo tudo.</h2>
+    <p class="section-sub">Você precisa de um método para transformar uma ideia em um projeto organizado, funcional e pronto para ser apresentado.</p>
+    <div class="grid">
+      <article class="card"><div class="icon">🤖</div><h3>IA na prática</h3><p>Aprenda a usar IA para planejar, criar, analisar, corrigir e evoluir seus projetos.</p></article>
+      <article class="card"><div class="icon">🎨</div><h3>Design profissional</h3><p>Estruture páginas, hierarquia visual, responsividade, UX e conversão.</p></article>
+      <article class="card"><div class="icon">💻</div><h3>Desenvolvimento</h3><p>Entenda frontend, backend, APIs, banco de dados, autenticação e funcionalidades.</p></article>
+      <article class="card"><div class="icon">🛠️</div><h3>Correção de projetos</h3><p>Aprenda a diagnosticar erros e orientar a IA sem sair quebrando o que já funciona.</p></article>
+      <article class="card"><div class="icon">🌐</div><h3>Publicação</h3><p>Conheça GitHub, deploy, domínio, HTTPS e o processo de colocar o projeto no ar.</p></article>
+      <article class="card"><div class="icon">💼</div><h3>Visão comercial</h3><p>Aprenda a transformar projetos em uma oferta de serviço e apresentar seu trabalho.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section included">
+  <div class="container">
+    <h2 class="section-title">O que você recebe</h2>
+    <p class="section-sub">Um treinamento estruturado para você estudar e colocar em prática.</p>
+    <div class="checks">
+      <div class="check"><span>✓</span>10 aulas completas</div>
+      <div class="check"><span>✓</span>Apostila Master</div>
+      <div class="check"><span>✓</span>Banco com 55+ prompts</div>
+      <div class="check"><span>✓</span>Exercícios e desafios</div>
+      <div class="check"><span>✓</span>Checklists profissionais</div>
+      <div class="check"><span>✓</span>Kit Comercial Profissional</div>
+      <div class="check"><span>✓</span>Projeto Final prático</div>
+      <div class="check"><span>✓</span>Avaliação e certificado de conclusão</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Para quem é este curso?</h2>
+    <p class="section-sub">Para quem quer aprender um processo prático para criar projetos com IA e desenvolver uma habilidade digital.</p>
+    <div class="audience">
+      <div class="audience-box">
+        <h3>É para você se...</h3>
+        <ul>
+          <li>Está começando a criar sites.</li>
+          <li>Quer aprender IA aplicada a projetos.</li>
+          <li>Quer montar um portfólio.</li>
+          <li>Quer criar sites para negócios locais.</li>
+          <li>Quer começar a oferecer serviços digitais.</li>
+        </ul>
+      </div>
+      <div class="audience-box">
+        <h3>Você vai aprender a...</h3>
+        <ul>
+          <li>Planejar antes de pedir para a IA construir.</li>
+          <li>Construir por etapas.</li>
+          <li>Testar e validar funcionalidades.</li>
+          <li>Publicar projetos na internet.</li>
+          <li>Pensar como responsável pelo projeto.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section included">
+  <div class="container">
+    <h2 class="section-title">Aprenda fazendo.</h2>
+    <p class="section-sub">Você acompanha um projeto prático de uma barbearia, passando por briefing, arquitetura, design, desenvolvimento, funcionalidades, banco de dados, autenticação, painel administrativo, testes e publicação.</p>
+  </div>
+</section>
+
+<section class="offer" id="oferta">
+  <div class="container">
+    <div class="offer-box">
+      <div class="badge">OFERTA ESPECIAL</div>
+      <h2 class="section-title">Comece hoje a aprender a criar sites com IA.</h2>
+      <div class="price"><small>R$ 97,00</small><strong>R$ 49,90</strong></div>
+      <p class="payment">Pagamento único • Curso online</p>
+      <!-- TROQUE O LINK ABAIXO PELO SEU LINK REAL DA KIWIFY -->
+      <a class="cta" href="SEU_LINK_KIWIFY_AQUI" target="_blank" rel="noopener">QUERO GARANTIR MEU ACESSO →</a>
+      <p class="note" style="margin-top:15px!important">Você será direcionado para o checkout seguro da Kiwify.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container faq">
+    <h2 class="section-title">Perguntas frequentes</h2>
+    <details><summary>Preciso saber programar?</summary><p>Não. O curso foi estruturado para quem está começando e quer aprender a utilizar IA de forma prática. Conhecimentos prévios podem ajudar, mas não são obrigatórios.</p></details>
+    <details><summary>O curso é online?</summary><p>Sim. O conteúdo é digital e você poderá estudar conforme as condições de acesso definidas no produto.</p></details>
+    <details><summary>Vou aprender apenas a gerar um site?</summary><p>Não. A proposta é ensinar o processo: briefing, planejamento, estrutura, desenvolvimento, funcionalidades, testes, publicação e visão comercial.</p></details>
+    <details><summary>Posso usar o que aprender para criar sites para clientes?</summary><p>Sim. O curso apresenta também uma visão comercial para estruturar serviços e apresentar projetos. Resultados financeiros não são garantidos e dependem da aplicação, mercado e esforço de cada pessoa.</p></details>
+    <details><summary>O certificado garante uma profissão ou emprego?</summary><p>Não. O certificado é de conclusão do treinamento e não equivale a diploma acadêmico ou certificação profissional regulamentada.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="container">
+    <h2 class="section-title">Sua próxima ideia pode virar um site.</h2>
+    <p class="section-sub">Aprenda o método, pratique e construa seus próprios projetos com Inteligência Artificial.</p>
+    <a class="cta" href="#oferta">QUERO COMEÇAR AGORA →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© 2026 TechFlow • DO ZERO AO SITE COM IA</div>
+</footer>
+</body>
+</html>
